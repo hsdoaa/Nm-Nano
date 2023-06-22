@@ -87,7 +87,7 @@ for key, value in mod_d.items() :
     dict_len=dict_len+len(value)
     
 #print(dict_len)
-file2=open('Nm_Modification_coors_hek_complete.txt','a') ### define output filename
+file2=open('coors_hela.txt','a') ### define output filename
 c=0
 ### loop through samfile ####
 for t, i in enumerate(sam_file):
