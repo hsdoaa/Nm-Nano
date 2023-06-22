@@ -1,0 +1,23 @@
+In order to generate a benchmark dataset, the user has to do the following:
+
+1- Ensure that BED file that highlights the Nm modified locations on the whole genome is in the same path where main.py file exists:
+
+2- Run the following python command:
+
+python main.py -r ref.fa -f reads.fastq
+
+Where 
+
+ref.fa referes to the reference Genome file
+reads.fastq referes to the fastq reads file of a specific cell line
+
+By runnung the command above, the main.py script will lunch several command lines for generating eventalign output. These commanad lines included in generate_event_align_output.txt
+Meanwhule the main.py will call gen_coors_Nm.py for generating the coordinate file that will be input to and extract_nm.py together with the eventalign outputto generate the benchmark dataset
+
+Note:
+
+-Once the user run the main python script, he/she will be prompted to enter the BED file name with extension
+
+-The user should include the fast5 files folder (fast5_files) from which reads.fastq file was generated in the same path of main.py
+
+-
