@@ -25,21 +25,16 @@ keras 2.3.1 (using Tensorflow backend)
 
 # Running  Nm-Nano:
 
-In order to run  Nm-Nano, the user has do the following:
+In order to run  Nm-Nano, the user has to choose one of Nm-nano machine learning models (xgboost or Random forest with embeeding) and run the one of following python commands:
 
-1- Ensure that BED file that highlights the Nm modified locations on the whole genome is in the same path where  main.py file exists:
-2- Run the following python command:
+python test_split_xgboost.py  #To run the xgboost model
 
-python main.py -r ref.fa -f reads.fastq
+or 
 
-Where the  Nm-Nano framework needs the following two inputs files when running it:
+python test_split_RF.py  #To run the RF with embeeding model
 
-- A reference Genome file (ref.fa)
-- The fastq reads file (reads.fastq)
 
 # Note:
-- The user should enter the BED file name with the absolute path and extension 
+- The user should include the benchmark dataset in the same path of test_split_xgboost.py and test_split_RF.py
 
-- The user should include the fast5 files folder (fast5_files) from which reads.fastq file was generated in the same path of main.py
-
-- The default model used in Nm-Nano framework is the Xgboost model implemented in xgboost_test_split.py. However, the user can test the Random Forest (RF) with embedding model implemented in RF_embedding_test_split.py instead of xgboost by entering RF model file name with its extension when he/she  is prompted to enter it while running main.py
+- All files required to generate the benchmark dataset is included in generate_benchmark folder. For testing Nm-nano framework, We include a benchmark dataset small sample for hela cell line. However, the user is free to generate a benchmark benchmark dataset for any other cell lines based on the instructions mentioned in README file in generate_benchmark folder.
