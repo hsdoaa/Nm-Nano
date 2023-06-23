@@ -22,9 +22,9 @@ Note:
 
 -TO allow user practicing with generating benchmark dataset, we include the following:
 
-a sample of fast5 files for the hela cell line in fast5_files folder 
-a sample of fastq files (reads.fastq) for the same cell line 
-a sample of reference genome (ref.fa)
-a sample of bed file for hela cell line (hela.bed.txt)
+A sample of fast5 files for the hela cell line in fast5_files folder 
+A sample of fastq files (reads.fastq) for the same cell line 
+A sample of reference genome (ref.fa)
+A sample of bed file for hela cell line (hela.bed.txt)
 
 -
