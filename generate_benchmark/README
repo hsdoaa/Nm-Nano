@@ -26,7 +26,7 @@ Note:
 2-A sample of fastq files (reads.fastq) for Hek293 corresponding to the fast5 files in step1 
 3-A link to  sample of reference genome (ref.fa) on Dropbox
 4-A sample of bed file for Hek293 cell line (hek.bed.txt)
-5- The user should download the fast5 file folder from DropBox and place it in the same path of main.py file
+5-The user should download the fast5 file folder from DropBox and place it in the same path of main.py file
 6-The user should download the reference genome sample file (ref.fa) from DropBox and place it in the same path of main.py file
 
 -
