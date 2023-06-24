@@ -1,7 +1,0 @@
-$minimap2 -ax map-ont --split-prefix /tmp/temp_name  ref.fa  reads.fastq > hela.sam
-$nanopolish index -d fast5_files/ reads.fastq 
-$samtools view -S -b hela.sam > hela.bam 
-$samtools sort hela.bam -o hela.sorted.bam
-$samtools index hela.sorted.bam  
-$samtools quickcheck hela.sorted.bam
-$nanopolish eventalign  --reads reads.fastq --bam  hela.sorted.bam  --genome ref.fa --scale-events > hela-reads-ref.eventalign.txt
