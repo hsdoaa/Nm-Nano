@@ -4,7 +4,7 @@ Nm-Nano: A framework for predicting 2´-O-Methylation (Nm) Sites in Nanopore RN
 # Getting Started and pre-requisites
 The following softwares and modules should be installed before using  Nm-Nano
 
-python 3.6.10
+python 3.7.13
 
 minimpa2 (https://github.com/lh3/minimap2)
 
@@ -12,15 +12,17 @@ Nanopolish (https://github.com/jts/nanopolish)
 
 samtools (http://www.htslib.org/)
 
-numpy 1.18.1
+numpy 1.19.5
 
-pandas 1.0.1
+pandas 1.2.4
 
-sklearn 0.22.2.post1
+scikit-learn 1.0.2 
 
-tensorflow 2.0.0
+tensorflow 2.6.0
 
-keras 2.3.1 (using Tensorflow backend)
+keras 2.6.0 (using Tensorflow backend)
+
+gensim  4.2.0
 
 
 # Running  Nm-Nano:
