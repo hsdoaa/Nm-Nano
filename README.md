@@ -27,7 +27,7 @@ keras 2.3.1 (using Tensorflow backend)
 
 In order to run  Nm-Nano, the user has to choose one of Nm-nano machine learning models (xgboost or Random forest with embeeding) and run one of following python commands:
 
-python xgboost.py      #To run the xgboost model
+python test_xgboost.py      #To run the xgboost model
 
 Or 
 
