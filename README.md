@@ -24,6 +24,12 @@ keras 2.6.0 (using Tensorflow backend)
 
 gensim  4.2.0
 
+The easiest way to get all required python packages mentioned above installed  and running without root access is through  creating the conda environment with the provided yml file Nm-nano.yml and activate the environment
+
+conda env create -f Nm-nano.yml
+
+conda activate Nm-nano
+
 
 # Running  Nm-Nano:
 
