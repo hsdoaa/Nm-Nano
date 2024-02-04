@@ -17,23 +17,19 @@ parser.add_argument('-f', action='store', dest='fastq_input', help='Provide Fast
 # Read arguments from command line
 args = parser.parse_args()
 
-ref = args.ref_input
-fastq_reads = args.fastq_input
-
-
+sys.argv[2] = args.ref_input
+sys.argv[4] = args.fastq_input
 ##################################################################################
-#a=sys.argv[1]
-#b=sys.argv[2]
-f = open("hek.sam", "w")
-f1 = open("hek.bam", "w")
-f3 = open("hek-reads-ref.eventalign.txt", "w")
-####subprocess.run(["minimap2", "-ax", "map-ont", "--split-prefix", "/tmp/temp_name", "ref.fa", "reads.fastq"], stdout=f)    #minimap2 -ax map-ont --split-prefix /tmp/temp_name  ref.fa  reads.fastq > hek.sam
-subprocess.run(["minimap2", "-ax", "map-ont", "--split-prefix", "/tmp/temp_name", ref, fastq_reads], stdout=f) 
-subprocess.run(["nanopolish" ,"index", "-d", "fast5_files/", "reads.fastq"])   #nanopolish index -d fast5_files/ reads.fastq 
-subprocess.run(["samtools" ,"view", "-S", "-b", "hek.sam"],stdout=f1)#samtools view -S -b hek.sam > hek.bam 
-subprocess.run(["samtools" ,"sort", "hek.bam", "-o", "hek.sorted.bam"]) #samtools sort hek.bam -o hek.sorted.bam
-subprocess.run(["samtools" ,"index", "hek.sorted.bam"]) #samtools index hek.sorted.bam
-subprocess.run(["samtools","quickcheck" ,"hek.sorted.bam"]) #$samtools quickcheck hek.sorted.bam
-subprocess.run(["nanopolish","eventalign" ,"--reads", "reads.fastq", "--bam", "hek.sorted.bam","--genome", "ref.fa", "--scale-events"], stdout=f3) #$nanopolish eventalign  --reads reads.fastq --bam  hek.sorted.bam  --genome ref.fa --scale-events > hek-reads-ref.eventalign.txt
+
+with open('hela.sam','w') as f:
+    subprocess.run(["minimap2", "-ax", "map-ont", "--split-prefix", "/tmp/temp_name", sys.argv[2], sys.argv[4]], stdout=f) 
+subprocess.run(["nanopolish" ,"index", "-d", "fast5_files/", sys.argv[4]])
+with open('hela.bam','w') as f1:
+    subprocess.run(["samtools" ,"view", "-S", "-b", "hela.sam"],stdout=f1)
+subprocess.run(["samtools" ,"sort", "hela.bam", "-o", "hela.sorted.bam"])
+subprocess.run(["samtools" ,"index", "hela.sorted.bam"])
+subprocess.run(["samtools","quickcheck" ,"hela.sorted.bam"])
+with open('hela-reads-ref.eventalign.txt','w') as f3:
+    subprocess.run(["nanopolish","eventalign" ,"--reads", sys.argv[4], "--bam", "hela.sorted.bam","--genome", sys.argv[2], "--scale-events"], stdout=f3)
 subprocess.run(["python","gen_coors_Nm.py"])
 subprocess.run(["python","extract_nm.py",])
